@@ -42,6 +42,7 @@ class Arguments(BaseArgument):
 
     # Output settings
     outputs_dir: str = DEFAULT_WORK_DIR
+    percentile_sort_metric: Optional[str] = None  # Metric used to order percentile rows
 
     # Prompt settings
     max_prompt_length: int = 131072  # Maximum length of the prompt
@@ -176,6 +177,12 @@ def add_argument(parser: argparse.ArgumentParser):
 
     # Output settings
     parser.add_argument('--outputs-dir', help='Outputs dir.', default='outputs')
+    parser.add_argument(
+        '--percentile-sort-metric',
+        type=str,
+        default=None,
+        help='Sort percentile rows by the specified metric label (e.g. "ttft", "latency")'
+    )
 
     # Dataset settings
     parser.add_argument('--dataset', type=str, default='openqa', help='Specify the dataset')
