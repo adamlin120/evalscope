@@ -461,6 +461,15 @@ A stress testing tool focused on large language models, which can be customized 
 
 Reference: Performance Testing [📖 User Guide](https://evalscope.readthedocs.io/en/latest/user_guides/stress_test/index.html)
 
+### Streamlit Performance Dashboard
+
+Quickly configure and launch perf runs from your browser using the bundled Streamlit app. It mirrors all CLI switches, remembers recent configurations, and visualizes summary plus percentile metrics once each run finishes.
+
+```bash
+uv pip install streamlit
+uv run streamlit run apps/perf_dashboard.py
+```
+
 **Output example**
 
 ![multi_perf](docs/en/user_guides/stress_test/images/multi_perf.png)
